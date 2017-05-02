@@ -9,24 +9,35 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Matrimonial Site</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    
 
-
+    
     <!-- Custom Fonts -->
     <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-    <!-- Custom CSS -->
-    <link href="../resource/css/Custom.css" rel="stylesheet">
-     <link href="../resource/css/admin.css" rel="stylesheet">
-    <!-- jQuery -->
+     <!-- jQuery -->
     <script src="../lib/js/jquery.js"></script>
+     <!-- jquery validation -->
+    <script src="../lib/js/jquery.validate.js"></script>
+
+      <!-- Custom jquery -->
+    <script src="../resource/js/custom.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../lib/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom CSS -->
+    <link href="../resource/css/custom.css" rel="stylesheet">
+     <link href="../resource/css/admin.css" rel="stylesheet">
+
 
     <!-- Script to Activate the Carousel -->
     

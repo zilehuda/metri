@@ -1,26 +1,26 @@
 <?php
-require('config.php');
+require('../resource/config.php');
 session_start();
 
-  $sql = mysql_query("SELECT * FROM USERS");
+  $sql = mysqli_query($link,"SELECT * FROM USERS");
       
- while( $row = mysql_fetch_array($sql))
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC))
  {
     
-if(isset($_POST[$row['first']]))
+if(isset($_POST[$row['id']]))
 {
 	   $iid = $row['id'];
 	   $uid = $_SESSION['lid'];
 	   echo $iid ."<br>";
 	   echo $uid;
-       $sql2 = mysql_query("INSERT INTO INTRESTED(uid,iid)" ." VALUES('$uid','$iid')");
+       $sql2 = mysqli_query($link,"INSERT INTO INTRESTED(uid,iid)" ." VALUES('$uid','$iid')");
 
 
 }
 
 }
 
-header('location:../matches.php');
+header('location:../view/matches.php');
 
 
 

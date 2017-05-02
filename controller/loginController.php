@@ -6,21 +6,24 @@ if(isset($_POST['submit']))
 {
  $first = $_POST['first'];
  $pwd = $_POST['pwd'];
- $pwd = md5($pwd);
- echo "p";
+ //$pwd = md5($pwd);
+ echo $first;
+ echo $pwd;
+ $sql = mysqli_query($link,"SELECT * FROM USERS where first = '$first' AND pwd = '$pwd'") or mysqli_error($link);
 
- $sql = mysql_query("SELECT * FROM USERS where first = '$first' AND pwd = '$pwd'");
+if($sql)
+	echo "done";
 
-
- while( $row = mysql_fetch_array($sql))
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC))
  {
  	$age = $row['age'];
  	$Religion = $row['religion'];
  	$mt = $row['mt'];
  	$id = $row['id'];
+ 	echo "asdad";
 
  }
- if(mysql_num_rows($sql)>0)
+ if(mysqli_num_rows($sql)>0)
  {
  	echo "'string'";
 
@@ -36,8 +39,6 @@ header('location:../public_html/index.php');
 
  }
  
-
-
 }
 
 

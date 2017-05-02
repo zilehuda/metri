@@ -12,6 +12,10 @@ body {
         background: #f1f1f2;
 }
 
+.navbar
+{
+    margin-bottom: 0;
+}
 .fa-large
 {
     font-size: 11em;
@@ -55,12 +59,20 @@ body {
     padding: 13px;
 }
 
+
+.passfield
+{
+        padding-top: 27px;
+}
+
+.search
+{
+        margin-top: 18px;
+        margin-bottom: 18px;
+}
 .FirstRow
 {
-        background-color: #eee;
-}
-body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        background: white;
 }
 
 .img-portfolio {

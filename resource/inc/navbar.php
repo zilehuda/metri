@@ -5,7 +5,29 @@
         session_start();
         if(!isset($_SESSION['login']))
             {  ?>
-                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container" >
+            <div class="col-md-6">
+        <img src="../resource/images/logo.png" width="300px" height="100px">
+        </div>
+        <div class="col-md-6">
+            <form class="navbar-form navbar-right"  action="../controller/loginController.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="first" placeholder="Username">
+                    </div>
+                    <div class="form-group passfield">
+                        <input type="password" class="form-control" name="pwd" placeholder="Password">
+                        <p id="passwordHelpBlock" class="form-text text-muted">
+                              forgot password ?
+                            </p>
+                    </div>
+                    <button type="submit" class="btn btn-default" name="submit">Sign In</button>
+                    
+                </form>
+        </div>
+
+    
+</div>
+                <nav class="navbar navbar-inverse " role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -15,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Matrimonial Site</a>
+                <a class="navbar-brand" href="../public_html/index.php">Matrimonial Site</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -26,7 +48,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Brows Profil By<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="register.html">Register</a>
+                                <a href="#">Register</a>
                             </li>
                             <li>
                                 <a href="dashboard.html">dashboard</a>
@@ -49,27 +71,7 @@
                         <a href="contact.html">Contact</a>
                     </li>
                     <li>
-                        <form class="navbar-form navbar-right"  action="../controller/loginController.php" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="first" placeholder="Username">
-                       
-
-                    </div>
-
-
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="pwd" placeholder="Password">
-                        
-                    </div>
-                    <button type="submit" class="btn btn-primary" name="submit">Sign In</button>
-
-                </form>
-                    </li>
-                    <li>
-                       <p class="navbar-text">or</p>
-                    </li>
-                    <li>
-                        <a href="contact.html">Register</a>
+                        <a href="../view/register.php">Register</a>
                     </li>
                 </ul>
 
@@ -105,13 +107,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 <li>
-                        <a href="contact.html">Dashboard </a>
+                        <a href="../view/dashboard.php">Dashboard </a>
                     </li>
                     <li>
                         <a href="contact.html">Profile</a>
                     </li>
                    <li>
-                        <a href="contact.html">Matches</a>
+                        <a href="../view/matches.php">Matches</a>
+                    </li>
+                     <li>
+                      <form action="../controller/logout.php" method="post">  <button type="submit" name="logout" >logout</button></form>
                     </li>
                     
                 </ul>

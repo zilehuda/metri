@@ -3,7 +3,10 @@
 
 
         <div class="container" >
-        <form class="form-horizontal" method="POST" action="../controller/registerController.php">
+
+        
+
+        <form class="form-horizontal" id="Registerform" method="POST" action="../controller/registerController.php">
         <div class="col-md-7 register">
         <div class="row">
            <div class="panel panel-default">
@@ -19,6 +22,12 @@
       <label class="control-label col-sm-2" >password:</label>
       <div class="col-sm-10">
         <input type="password" class="form-control" id="pwd" name="pwd" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" >Confirm password:</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="cfmpwd" name="cfmpwd" required>
       </div>
     </div>
       </div>

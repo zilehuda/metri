@@ -36,12 +36,14 @@ if(isset($_POST['submit']))
            // header('location:../index.html');
      $query="INSERT INTO USERS(first,last,email,age,mt,religion,profile,radio,pwd,education,eye,height,myself,profession,smoke)" . "VALUES('$first','$last','$email','$age','$mt','$religion','$profile','$radio','$pwd','$edu','$eye','$height','$myself','$pro','$smoke')";
 
-     echo $query;
+    //echo $query;
+
 
      mysqli_query($link,$query) or mysqli_error($link);
      // mysqli_query($link,"INSERT INTO USERS(first,last,email,age,mt,religion,profile,radio,pwd,education,eye,height,myself,profession,smoke)" . "VALUES('
      //  DD','DD','DDD','12','SD','DD','SON','male','123','ddd','w','d',
      //    'c','c','c')") or die(mysqli_error($link));
+       header("location:../public_html/index.php");
 
 
 }

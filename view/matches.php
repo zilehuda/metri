@@ -11,8 +11,8 @@ include('../resource/inc/navbar.php'); ?>
   <div class="panel-heading">Religion</div>
   <div class="panel-body">
     <form action="../controller/searchController.php" method ="POST" >
-   <?php $sql = mysql_query("SELECT DISTINCT(religion) FROM USERS ");
- while( $row = mysql_fetch_array($sql)) {?>
+   <?php $sql = mysqli_query($link,"SELECT DISTINCT(religion) FROM USERS ");
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC)) {?>
         <div class="radio">
   <label><input type="radio" name="rell" value="<?php  echo $row['religion'];?>"><?php  echo $row['religion'];?></label>
 </div>
@@ -31,10 +31,10 @@ include('../resource/inc/navbar.php'); ?>
   <div class="panel-heading">Mother Tongue</div>
   <div class="panel-body">
     <form action="../controller/searchController.php" method ="POST">
-     <?php $sql = mysql_query("SELECT DISTINCT(mt) FROM USERS ");
+     <?php $sql = mysqli_query($link,"SELECT DISTINCT(mt) FROM USERS ");
 
 
- while( $row = mysql_fetch_array($sql)) {?>
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC)) {?>
         <div class="radio">
 
         
@@ -92,9 +92,9 @@ include('../resource/inc/navbar.php'); ?>
 
     $rel =  $_SESSION['rel'];
     $m = $_SESSION['mother'];
-    $sql = mysql_query("SELECT * FROM USERS WHERE religion = '$rel' AND mt = '$m'");
+    $sql = mysqli_query($link,"SELECT * FROM USERS WHERE religion = '$rel' AND mt = '$m'");
       
- while( $row = mysql_fetch_array($sql))
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC))
  {
     ?>
   <li class="media box">
@@ -105,7 +105,9 @@ include('../resource/inc/navbar.php'); ?>
       </a>
     </div>
     <div class="media-body ">
-      <h4 class="media-heading"> <?php echo $row['first'] . " " .$row['last'];?></h4>
+      <form action = "profile.php" method="GET">
+      <button type="submit" class="btn btn-default" name="<?php echo $row['id'];  ?>"><h4 class="media-heading"> <?php echo $row['first'] . " " .$row['last'];?></h4></button>
+</form>
         age: <?php echo $row['age'];?><br>
         Religous: <?php echo $row['religion'];?><br>
         Mother Tongue: <?php echo $row['mt'];?><br>
@@ -117,7 +119,7 @@ include('../resource/inc/navbar.php'); ?>
     
     <div class="media-right">
          <h4 >Interested ?</h4>
-         <button type="submit" class="btn btn-primary" name="<?php echo $row['first'];?>">Intested</button>
+         <button type="submit" class="btn btn-primary" name="<?php echo $row['id'];?>">Intested</button>
 
 
          <button type="submit" class="btn btn-primary">No</button>
@@ -127,52 +129,8 @@ include('../resource/inc/navbar.php'); ?>
   </li>
 
   <?php };?>
-  <li class="media box">
-  <div class="col-md-8">
-    <div class="media-left">
-      <a href="#">
-        <img class="media-object" src="../resource/images/64x64.svg" alt="...">
-      </a>
-    </div>
-    <div class="media-body ">
-      <h4 class="media-heading">Media heading</h4>
-        age: 28<br>
-        Religous: 28<br>
-        Mother Tongue: 28<br>
-        Education: 28<br>
-    </div>
-    </div>
-    <div class="col-md-4">
-    <div class="media-right">
-         <h4 >Interested ?</h4>
-         <button type="submit" class="btn btn-primary">May be</button>
-         <button type="submit" class="btn btn-primary">No</button>
-    </div>
-    </div>
-  </li>
-  <li class="media box">
-  <div class="col-md-8">
-    <div class="media-left">
-      <a href="#">
-        <img class="media-object" src="images/64x64.svg" alt="...">
-      </a>
-    </div>
-    <div class="media-body ">
-      <h4 class="media-heading">Media heading</h4>
-        age: 28<br>
-        Religous: 28<br>
-        Mother Tongue: 28<br>
-        Education: 28<br>
-    </div>
-    </div>
-    <div class="col-md-4">
-    <div class="media-right">
-         <h4 >Interested ?</h4>
-         <button type="submit" class="btn btn-primary">May be</button>
-         <button type="submit" class="btn btn-primary">No</button>
-    </div>
-    </div>
-  </li>
+
+  
   
 </ul>
 

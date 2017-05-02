@@ -44,10 +44,10 @@ include('../resource/inc/navbar.php'); ?>
    <?php 
    $id = $_SESSION['lid'];
    
-   $sql = mysql_query("SELECT first from USERS where id in (SELECT uid FROM intrested where iid = '$id') ");
+   $sql = mysqli_query($link,"SELECT first from USERS where id in (SELECT uid FROM intrested where iid = '$id') ");
 
 
- while( $row = mysql_fetch_array($sql)) {?>
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC)) {?>
         <div class="radio">
      
 <form action="../controller/BIntrestedController.php" method="POST">
@@ -74,10 +74,10 @@ include('../resource/inc/navbar.php'); ?>
   <div class="panel-heading">New Matches</div>
       <?php
       
- $sql = mysql_query("SELECT * FROM USERS ");
+ $sql = mysqli_query($link,"SELECT * FROM USERS ");
 
 
- while( $row = mysql_fetch_array($sql))
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC))
  {
     ?>
   <div class="panel-body">
@@ -189,10 +189,10 @@ include('../resource/inc/navbar.php'); ?>
 </div>
  <?php
       
- $sql = mysql_query("SELECT * FROM USERS ");
+ $sql = mysqli_query($link,"SELECT * FROM USERS ");
 
 
- while( $row = mysql_fetch_array($sql))
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC))
  {
     ?>
  <div class="panel panel-primary">
@@ -203,10 +203,10 @@ include('../resource/inc/navbar.php'); ?>
                       <label for="religion">Religion:</label>
                       <select class="form-control" id="religion" name="religion">
 
-                   <?php $sql = mysql_query("SELECT DISTINCT(religion) FROM USERS ");
+                   <?php $sql = mysqli_query($link,"SELECT DISTINCT(religion) FROM USERS ");
 
 
- while( $row = mysql_fetch_array($sql)) {?>     <option value="<?php echo $row['religion'];?>">
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC)) {?>     <option value="<?php echo $row['religion'];?>">
 <?php  echo $row['religion'];?> </option>
                         
                         <?php };?>
@@ -216,10 +216,10 @@ include('../resource/inc/navbar.php'); ?>
                       <label for="mt">Mother Toungue:</label>
                       <select class="form-control" id="mt" name="mt">
 
-                   <?php $sql = mysql_query("SELECT DISTINCT(mt) FROM USERS ");
+                   <?php $sql = mysqli_query($link,"SELECT DISTINCT(mt) FROM USERS ");
 
 
- while( $row = mysql_fetch_array($sql))
+ while( $row = mysqli_fetch_array($sql,MYSQLI_ASSOC))
  {?>   
                         <option value="<?php echo $row['mt'];?>"><?php  echo $row['mt'];?></option>
 
